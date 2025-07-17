@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart – SneakPeak</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .cart-container {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 1rem 2rem;
+      background-color: #222;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
+
+    .cart-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #ffce00;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 1rem;
+    }
+
+    .cart-item img {
+      width: 100px;
+      border-radius: 10px;
+      margin-right: 1rem;
+    }
+
+    .cart-info {
+      flex: 1;
+    }
+
+    .cart-info h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-info p {
+      color: #ccc;
+      margin: 0.2rem 0;
+    }
+
+    .cart-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .remove-btn {
+      padding: 6px 12px;
+      background: #ff4d4d;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .remove-btn:hover {
+      background: #ff1a1a;
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #0f0;
+    }
+
+    .checkout-btn {
+      margin-top: 1rem;
+      float: right;
+      padding: 12px 24px;
+      background-color: #00ffae;
+      border: none;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #55ffcc;
+    }
+
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-info {
+        margin-top: 1rem;
+      }
+
+      .cart-total,
+      .checkout-btn {
+        text-align: center;
+        float: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">SneakPeak</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nike.html">Nike</a></li>
+      <li><a href="adidas.html">Adidas</a></li>
+      <li><a href="puma.html">Puma</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+  </header>
+
+  <div class="cart-container">
+    <h2 class="cart-title">🛒 Your Shopping Cart</h2>
+
+    <!-- Cart Item -->
+    <div class="cart-item">
+      <img src="https://i.ibb.co/JmmWLRL/nike-air-max.png" alt="Nike Air Max">
+      <div class="cart-info">
+        <h3>Nike Air Max 270</h3>
+        <p>Size: UK 9</p>
+        <p>Price: ₹9,299</p>
+      </div>
+      <div class="cart-actions">
+        <p>Qty: 1</p>
+        <button class="remove-btn" onclick="this.closest('.cart-item').remove(); updateTotal();">Remove</button>
+      </div>
+    </div>
+
+    <!-- Add more items here if needed -->
+
+    <div class="cart-total">
+      Total: ₹9,299
+    </div>
+
+    <button class="checkout-btn" onclick="alert('Proceeding to checkout...')">Checkout</button>
+  </div>
+
+  <script>
+    function updateTotal() {
+      const itemPrices = document.querySelectorAll('.cart-info p:last-of-type');
+      let total = 0;
+      itemPrices.forEach(p => {
+        const price = parseInt(p.textContent.replace(/\D/g, ''));
+        total += price;
+      });
+      document.querySelector('.cart-total').textContent = `Total: ₹${total}`;
+    }
+  </script>
+
+</body>
+</html>

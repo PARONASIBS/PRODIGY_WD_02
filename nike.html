@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nike Air Max 270 – SneakPeak</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 2rem;
+      align-items: center;
+      background-color: #111;
+      color: white;
+    }
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      width: 100%;
+      background: #222;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    }
+    .product-image {
+      width: 100%;
+      height: auto;
+    }
+    .product-details {
+      padding: 2rem;
+    }
+    .product-details h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .product-details p {
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    .price {
+      font-size: 1.5rem;
+      color: #ff6b6b;
+      margin-bottom: 1rem;
+    }
+    .size-select {
+      margin-bottom: 1rem;
+    }
+    .btn-buy {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff6b6b;
+      color: #000;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-buy:hover {
+      background: #ff8787;
+    }
+    @media (min-width: 768px) {
+      .product-card {
+        flex-direction: row;
+      }
+      .product-image {
+        width: 50%;
+      }
+      .product-details {
+        width: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">SneakPeak</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="nike.html">Nike</a></li>
+      <li><a href="adidas.html">Adidas</a></li>
+      <li><a href="puma.html">Puma</a></li>
+    </ul>
+  </header>
+
+  <section class="product-container">
+    <div class="product-card">
+      <img src="D:\internship\resposive page\AIR+JORDAN.png" alt="Nike Air Max" class="product-image" />
+      <div class="product-details">
+        <h1>Nike Air Max 270</h1>
+        <p>Legendary comfort meets bold design with the iconic Air Max 270. Perfect for everyday wear.</p>
+        <p class="price">₹9,299</p>
+        <div class="size-select">
+          <label for="size">Select Size:</label>
+          <select id="size">
+            <option>UK 6</option>
+            <option>UK 7</option>
+            <option>UK 8</option>
+            <option>UK 9</option>
+            <option>UK 10</option>
+          </select>
+        </div>
+        <a href="#" class="btn-buy" onclick="alert('Added to cart!')">Add to Cart</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h3>Contact Us</h3>
+    <p>Email: contact@sneakpeak.com</p>
+    <p>Follow us on Instagram: @sneakpeak</p>
+  </footer>
+</body>
+</html>
